@@ -9,6 +9,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 
 require 'rspec/rails' # Rails is not loaded until this point! # Add additional requires below.
 require 'shoulda/matchers'
+require 'slim'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
