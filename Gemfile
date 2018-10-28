@@ -34,6 +34,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
   gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '4.0.0.rc1'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
