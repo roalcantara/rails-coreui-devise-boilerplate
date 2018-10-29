@@ -9,4 +9,10 @@ module ApplicationHelper
     content_for(:page_title) ||
       [app_name, controller.controller_name.capitalize, controller.action_name.capitalize].join(' | ')
   end
+
+  def body_classes(classes)
+    content_for(:body_classes) do
+      classes
+    end
+  end
 end

@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title = page_title
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body.app class="#{content_for(:body_classes) if content_for?(:body_classes)}"
+    = content_for?(:main) ? yield(:main) : yield

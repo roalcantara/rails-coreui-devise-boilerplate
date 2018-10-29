@@ -1,0 +1,8 @@
+- body_classes 'flex-row align-items-center'
+
+- content_for :main do
+  .container
+    = render '/layouts/flash_messages'
+    = yield
+
+= render template: 'layouts/base'
