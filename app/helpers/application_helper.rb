@@ -15,4 +15,8 @@ module ApplicationHelper
       classes
     end
   end
+
+  def show_errors(model)
+    render partial: '/layouts/errors', locals: { model: model }
+  end
 end

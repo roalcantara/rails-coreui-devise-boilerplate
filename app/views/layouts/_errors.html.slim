@@ -1,0 +1,6 @@
+- if model.errors.any?
+  #error_explanation
+    strong #{ pluralize(model.errors.count, 'error') } prohibited this #{ model.class.to_s.humanize } from being saved:
+    ul.alert.alert-danger
+      - model.errors.full_messages.each do |msg|
+        li #{ msg }
