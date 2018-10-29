@@ -3,6 +3,7 @@
     .app-body
       = render '/layouts/menu'
       main.main
+        = breadcrumbs
         .container-fluid
           = render '/layouts/flash_messages'
           = yield

@@ -1,0 +1,5 @@
+nav[aria-label="breadcrumb"]
+  ol.breadcrumb
+    - crumbs.each do |crumb|
+      li.breadcrumb-item class="#{current_crumb?(crumb) ? 'active' : ''}"
+        = crumb(crumb, crumb == crumbs.last)
