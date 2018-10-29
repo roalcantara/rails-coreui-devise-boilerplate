@@ -32,6 +32,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'database_cleaner', '~> 1.7'
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
+  gem 'ffaker', '~> 2.10'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
   gem 'rspec-rails', '~> 3.8'
   gem 'selenium-webdriver'
