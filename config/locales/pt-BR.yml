@@ -1,7 +1,9 @@
 pt-BR:
   attributes:
     created_at: Criado Em
+    created_by: Criado Por
     updated_at: Atualizado Em
+    updated_by: Atualizado Por
   models_and_attributes: &models_and_attributes
     models:
       user:

@@ -52,6 +52,8 @@ GEM
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
+    blamer (4.1.0)
+      activerecord
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     bootstrap (4.1.3)
@@ -313,6 +315,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  blamer (~> 4.1)
   bootsnap (>= 1.1.0)
   bootstrap_form (~> 4.0)
   byebug

@@ -1,7 +1,9 @@
 en:
   attributes:
     created_at: Created at
+    created_by: Created by
     updated_at: Updated at
+    updated_by: Updated by
   models_and_attributes: &models_and_attributes
     models:
       user:

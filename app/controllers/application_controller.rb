@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   before_action :set_page, only: %i[index]
   before_action :set_per_page, only: %i[index]
   before_action :authenticate_user!
+  before_action :set_userstamp
   layout :layout_by_resource
 
   private
@@ -23,5 +24,9 @@ class ApplicationController < ActionController::Base
 
   def layout_by_resource
     devise_controller? && !user_signed_in? ? 'plain' : 'application'
+  end
+
+  def set_userstamp
+    User.current_user = User.find(current_user.id) if user_signed_in?
   end
 end
