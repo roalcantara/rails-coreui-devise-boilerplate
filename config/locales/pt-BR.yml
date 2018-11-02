@@ -1,0 +1,22 @@
+pt-BR:
+  attributes:
+    created_at: Criado Em
+    updated_at: Atualizado Em
+  models_and_attributes: &models_and_attributes
+    models:
+  activerecord:
+    <<: *models_and_attributes
+  activemodel:
+    <<: *models_and_attributes
+  errors: &errors
+    forbidden: Ops! Não autorizado..
+  alerts:
+    are_you_sure: Tem certeza?
+  actions:
+    back: Voltar
+    filter: Filtrar
+    search: Buscar
+    new: Novo %{name}
+    edit: Editar %{name}
+    show: Exibir %{name}
+    destroy: Excluir %{name}
