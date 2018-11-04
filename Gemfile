@@ -9,6 +9,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap_form', '~> 4.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'coreui-rails', '~> 1.1'
+gem 'devise', '~> 4.5'
+gem 'devise-i18n', '~> 1.6', '>= 1.6.5'
 gem 'jbuilder', '~> 2.5'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'kaminari-i18n', '~> 0.5.0'

@@ -7,14 +7,13 @@ header.app-header.navbar.bg-white
   ul.nav.navbar-nav.ml-auto
     li.nav-item.dropdown.pr-2
       a.nav-link.nav-link[data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"]
-        | admin@coreui.io
+        = current_user.email
       .dropdown-menu.dropdown-menu-right
         .dropdown-header.text-center
-          strong
-            | Account
-        a.dropdown-item[href="#"]
+          strong Account
+        = link_to edit_user_registration_path, class: 'dropdown-item' do
           i.fa.fa-user
-          |  Profile
-        a.dropdown-item[href="#"]
+          | Profile
+        = link_to destroy_user_session_path, class: 'dropdown-item', method: :delete do
           i.fa.fa-lock
-          |  Logout
+          | Logout

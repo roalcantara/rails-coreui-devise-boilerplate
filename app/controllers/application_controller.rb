@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
   before_action :set_page, only: %i[index]
   before_action :set_per_page, only: %i[index]
+  before_action :authenticate_user!
+  layout :layout_by_resource
 
   private
 
@@ -17,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def set_per_page
     @per_page = params[:per_page] || 10
+  end
+
+  def layout_by_resource
+    devise_controller? && !user_signed_in? ? 'plain' : 'application'
   end
 end
