@@ -1,0 +1,27 @@
+.row.justify-content-center
+  .col-md-8
+    .card-group
+      .card.p-4
+        .card-body
+          h1 Login
+          p.text-muted Sign In to your account
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .input-group.mb-3
+              .input-group-prepend
+                span.input-group-text
+                  i.icon-user
+              = f.input_field :email, required: true, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: 'E-mail'
+            .input-group.mb-4
+              .input-group-prepend
+                span.input-group-text
+                  i.icon-lock
+              = f.password_field :password, required: true, autocomplete: 'current-password', class: 'form-control', placeholder: 'Password'
+            .row
+              .col-6
+                = f.button :submit, 'Log in', class: 'btn btn-primary px-4'
+              .col-6.text-right
+                = link_to 'Forgot password?', new_password_path(resource_name), class: 'btn btn-link px-0'
+      .card.text-white.bg-primary.py-5.d-md-down-none[style="width:44%"]
+        .card-body.text-center
+          h2 Sign up
+          = link_to 'Sign Up Now!', new_registration_path(resource_name), class: 'btn btn-primary active mt-3'

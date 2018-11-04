@@ -4,6 +4,14 @@ pt-BR:
     updated_at: Atualizado Em
   models_and_attributes: &models_and_attributes
     models:
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      user:
+        email: Email
+        password: Senha
+        password_confirmation: Confirme a senha
   activerecord:
     <<: *models_and_attributes
   activemodel:

@@ -4,6 +4,14 @@ en:
     updated_at: Updated at
   models_and_attributes: &models_and_attributes
     models:
+      user:
+        one: User
+        other: Users
+    attributes:
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
   activerecord:
     <<: *models_and_attributes
   activemodel:
