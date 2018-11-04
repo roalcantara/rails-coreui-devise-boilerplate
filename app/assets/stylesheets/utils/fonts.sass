@@ -1,0 +1,45 @@
+@for $i from 0 through 100
+  .font-size-#{$i}px, [font-size-#{$i}px]
+    font-size: #{$i}px !important
+
+.font-weight-bold, [font-weight-bold]
+  font-weight: bold !important
+
+.font-weight-bolder, [font-weight-bolder]
+  font-weight: bolder !important
+
+@for $i from 1 through 9
+  .font-weight-#{$i}00, [font-weight-#{$i}00]
+    font-weight: 100 * $i !important
+
+.font-size-tiny, [font-size-tiny]
+  font-size: 12px !important
+
+.font-size-small, [font-size-small]
+  font-size: 13px !important
+
+.font-size-medium, [font-size-medium]
+  font-size: 14px !important
+
+.font-size-normal, [font-size-normal]
+  font-size: 16px !important
+
+.font-size-big, [font-size-big]
+  font-size: 18px !important
+
+.font-size-bigger, [font-size-bigger]
+  font-size: 20px !important
+
+.font-size-huge, [font-size-huge]
+  font-size: 25px !important
+
+.font-size-hugest, [font-size-hugest]
+  font-size: 30px !important
+
+.font-size-giant, [font-size-giant]
+  font-size: 50px !important
+
+$font-styles: normal italic oblique
+@each $style in $font-styles
+  .font-style-#{$style}, [font-style-#{$style}]
+    font-style: $style !important
