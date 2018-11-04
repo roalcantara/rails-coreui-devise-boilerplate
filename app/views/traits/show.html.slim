@@ -1,0 +1,21 @@
+.row.justify-content-md-center
+  .col-7
+    ul.list-group.rounded-top
+      li.list-group-item.rounded-top.active
+        h4.pull-left.m-0
+          = Trait.model_name.human
+          small  ##{ @trait.id }
+        = link_to edit_trait_path(@trait), class: 'text-white pull-right', data: { toggle: :tooltip, placement: :top}, title: t('actions.edit', name: '') do
+          i.icon-note
+      li.list-group-item
+        h6.w-100px.d-inline-flex.font-weight-bold.text-uppercase.text-right.text-monospace
+          = Trait.human_attribute_name :kind
+        span.float-right
+          = @trait.human_enum_value :kind
+      li.list-group-item
+        h6.w-100px.d-inline-flex.font-weight-bold.text-uppercase.text-right.text-monospace
+          = Trait.human_attribute_name :title
+        span.float-right
+          = @trait.human_enum_value :title
+
+    = link_to t('actions.back'), traits_path, class: 'btn btn-secondary rounded mt-3 float-right'

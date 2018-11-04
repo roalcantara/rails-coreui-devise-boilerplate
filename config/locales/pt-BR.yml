@@ -9,11 +9,20 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      trait:
+        one: Traço
+        other: Traços
     attributes:
       user:
         email: Email
         password: Senha
         password_confirmation: Confirme a senha
+      trait:
+        title: Título
+        kind: Tipo
+      trait/kind:
+         positive: Positivo
+         negative: Negativo
   activerecord:
     <<: *models_and_attributes
   activemodel:

@@ -1,1 +1,11 @@
 .sidebar
+  nav.sidebar-nav.ps.ps--active-y
+    ul.nav
+      li.nav-title Admin
+      li.nav-item
+        = link_to traits_path, class: 'nav-link' do
+          i.nav-icon.icon-tag
+          =< Trait.model_name.human.pluralize
+          span.badge.badge-info.rounded
+            | NEW
+            | NEW

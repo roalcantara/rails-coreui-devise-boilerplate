@@ -9,11 +9,20 @@ en:
       user:
         one: User
         other: Users
+      trait:
+        one: Trait
+        other: Traits
     attributes:
       user:
         email: Email
         password: Password
         password_confirmation: Password confirmation
+      trait:
+        title: Title
+        kind: Type
+      trait/kind:
+         positive: Positive
+         negative: Negative
   activerecord:
     <<: *models_and_attributes
   activemodel:
