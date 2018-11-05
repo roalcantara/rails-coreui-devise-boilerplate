@@ -8,3 +8,4 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body.app class="#{content_for(:body_classes) if content_for?(:body_classes)}"
     = content_for?(:main) ? yield(:main) : yield
+    = javascript_include_tag 'application-bottom'
