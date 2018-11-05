@@ -15,6 +15,9 @@ en:
       component:
         one: Component
         other: Components
+      food_group:
+        one: Food Group
+        other: Food Groups
     attributes:
       user:
         email: Email
@@ -54,6 +57,9 @@ en:
          cellulose: Cellulose
          Saturated: Saturated
          Unsaturated: Unsaturated
+      food_group:
+        name: Name
+        description: Description
   activerecord:
     <<: *models_and_attributes
   activemodel:

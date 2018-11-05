@@ -1,0 +1,35 @@
+== render 'filter'
+
+.card.rounded.card-accent-primary
+  .card-header.rounded-top
+    i.icons.icon-list
+    =< FoodGroup.model_name.human.pluralize
+    .card-header-actions
+      = link_to new_food_group_path, class: 'card-header-action' do
+        i.icon-note
+  .card-body
+    table.table.table-responsive-sm.table-striped
+      thead
+        tr
+          th = FoodGroup.human_attribute_name :name
+          th = FoodGroup.human_attribute_name :description
+          th.w-150px
+      tbody
+        - @food_groups.each do |food_group|
+          tr
+            td = food_group.name
+            td = food_group.description
+            td
+              = link_to food_group_path(food_group), class: 'btn btn-link', data: { toggle: :tooltip, placement: :top}, title: t('actions.show', name: '') do
+                i.icon-eye
+              = link_to edit_food_group_path(food_group), class: 'btn btn-link', data: { toggle: :tooltip, placement: :top}, title: t('actions.edit', name: '') do
+                i.icon-note
+              =< link_to food_group, data: { confirm: t('alerts.are_you_sure'), toggle: :tooltip, placement: :top }, method: :delete, class: 'btn btn-link', title: t('actions.destroy', name: '') do
+                i.icon-close.text-danger
+    .d-flex.float-right
+      .mr-3.pt-2
+        = page_entries_info @food_groups
+      => paginate @food_groups
+      - unless @food_groups.empty?
+        = link_to food_groups_path(format: :csv, params: request.query_parameters), class: 'btn btn-primary rounded h-35px ml-2' do
+          i.icon-cloud-download

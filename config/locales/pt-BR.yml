@@ -15,6 +15,9 @@ pt-BR:
       component:
         one: Componente
         other: Componentes
+      food_group:
+        one: Grupo de Alimento
+        other: Grupos de Alimento
     attributes:
       user:
         email: Email
@@ -54,6 +57,9 @@ pt-BR:
          cellulose: Celulose
          saturated: Saturada
          unsaturated: Insaturada
+      food_group:
+        name: Nome
+        description: Descrição
   activerecord:
     <<: *models_and_attributes
   activemodel:

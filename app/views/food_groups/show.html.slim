@@ -1,0 +1,22 @@
+.row.justify-content-md-center
+  .col-7
+    ul.list-group.rounded-top
+      li.list-group-item.rounded-top.active
+        h4.pull-left.m-0
+          = FoodGroup.model_name.human
+          small  ##{ @food_group.id }
+        = link_to edit_food_group_path(@food_group), class: 'text-white pull-right', data: { toggle: :tooltip, placement: :top}, title: t('actions.edit', name: '') do
+          i.icon-note
+      li.list-group-item
+        h6.w-100px.d-inline-flex.font-weight-bold.text-uppercase.text-monospace
+          span.float-right
+            = FoodGroup.human_attribute_name :name
+        span.float-right
+          = @food_group.name
+      li.list-group-item.rounded-bottom
+        h6.w-100px.d-inline-flex.font-weight-bold.text-uppercase.text-right.text-monospace
+          = FoodGroup.human_attribute_name :description
+        span.float-right
+          = @food_group.description || '--'
+
+    = link_to t('actions.back'), food_groups_path, class: 'btn btn-secondary rounded mt-3 float-right'
