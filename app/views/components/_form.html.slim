@@ -1,0 +1,23 @@
+.row.justify-content-md-center
+  .card.rounded.w-75
+    .card-header.rounded-top
+      i.icon-note
+      =< t("actions.#{@component.persisted? ? 'edit' : 'new'}", name: Component.model_name.human)
+
+    = simple_form_for @component do |f|
+      .card-body
+        = f.error_notification
+        = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+        .form-inputs
+          = f.input :function, collection: Component.human_enum_values_to_h(:function), label_method: :second, value_method: :first
+          = f.input :kind, collection: Component.human_enum_values_to_h(:kind), label_method: :second, value_method: :first
+          = f.input :group, collection: Component.human_enum_values_to_h(:group), label_method: :second, value_method: :first
+          = f.input :category, collection: Component.human_enum_values_to_h(:category), label_method: :second, value_method: :first, include_blank: true
+          = f.input :name
+          = f.input :description
+
+      .card-footer.rounded-bottom.text-right
+        =< link_to t('actions.back'), components_path, class: 'btn btn-secondary rounded'
+        = f.button :submit, class: 'btn btn-primary rounded ml-2' do
+          i.fa.fa-pencil.fa-lg

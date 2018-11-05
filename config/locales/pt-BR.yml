@@ -12,6 +12,9 @@ pt-BR:
       trait:
         one: Traço
         other: Traços
+      component:
+        one: Componente
+        other: Componentes
     attributes:
       user:
         email: Email
@@ -23,6 +26,34 @@ pt-BR:
       trait/kind:
          positive: Positivo
          negative: Negativo
+      component:
+        name: Nome
+        description: Descrição
+        function: Função
+        kind: Tipo
+        group: Grupo
+        category: Categoria
+      component/function:
+         energy_givin: Energético
+         bodybuilding: Construtor
+         protective: Regulador
+      component/kind:
+         macronutrient: Macronutriente
+         micronutrient: Micronutriente
+      component/group:
+         carbohydrate: Carboidrato
+         protein: Proteína
+         lipid: Lipídios
+         vitamin: Vitamina
+         mineral: Mineral
+      component/category:
+         water_soluble: Hidrossolúvel
+         fat_soluble: Lipossolúvel
+         sugar: Açucar
+         starch: Amido
+         cellulose: Celulose
+         saturated: Saturada
+         unsaturated: Insaturada
   activerecord:
     <<: *models_and_attributes
   activemodel:

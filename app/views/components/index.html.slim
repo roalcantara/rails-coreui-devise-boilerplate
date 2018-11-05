@@ -1,0 +1,39 @@
+== render 'filter'
+
+.card.rounded.card-accent-primary
+  .card-header.rounded-top
+    i.icons.icon-list
+    =< Component.model_name.human.pluralize
+    .card-header-actions
+      = link_to new_component_path, class: 'card-header-action' do
+        i.icon-note
+  .card-body
+    table.table.table-responsive-sm.table-striped
+      thead
+        tr
+          th = Component.human_attribute_name :group
+          th = Component.human_attribute_name :name
+          th = Component.human_attribute_name :created_at
+          th = Component.human_attribute_name :created_by
+          th.w-150px
+      tbody
+        - @components.each do |component|
+          tr
+            td = component.human_enum_value :group
+            td = component.name
+            td = component.created_at.to_formatted_s :short
+            td = component.created_by.email
+            td
+              = link_to component_path(component), class: 'btn btn-link', data: { toggle: :tooltip, placement: :top}, title: t('actions.show', name: '') do
+                i.icon-eye
+              = link_to edit_component_path(component), class: 'btn btn-link', data: { toggle: :tooltip, placement: :top}, title: t('actions.edit', name: '') do
+                i.icon-note
+              =< link_to component, data: { confirm: t('alerts.are_you_sure'), toggle: :tooltip, placement: :top }, method: :delete, class: 'btn btn-link', title: t('actions.destroy', name: '') do
+                i.icon-close.text-danger
+    .d-flex.float-right
+      .mr-3.pt-2
+        = page_entries_info @components
+      => paginate @components
+      - unless @components.empty?
+        = link_to components_path(format: :csv, params: request.query_parameters), class: 'btn btn-primary rounded h-35px ml-2' do
+          i.icon-cloud-download

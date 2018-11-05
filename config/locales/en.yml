@@ -12,6 +12,9 @@ en:
       trait:
         one: Trait
         other: Traits
+      component:
+        one: Component
+        other: Components
     attributes:
       user:
         email: Email
@@ -23,6 +26,34 @@ en:
       trait/kind:
          positive: Positive
          negative: Negative
+      component:
+        name: Name
+        description: Description
+        function: Function
+        kind: Kind
+        group: Group
+        category: Category
+      component/function:
+         energy_givin: Energy Givin
+         bodybuilding: Body Building
+         protective: Protective
+      component/kind:
+         macronutrient: Macronutrient
+         micronutrient: Micronutrient
+      component/group:
+         carbohydrate: Carbohydrate
+         protein: Protein
+         lipid: Lipid
+         vitamin: Vitamin
+         mineral: Mineral
+      component/category:
+         water_soluble: Water Soluble
+         fat_soluble: Fat Soluble
+         sugar: Sugar
+         starch: Starch
+         cellulose: Cellulose
+         Saturated: Saturated
+         Unsaturated: Unsaturated
   activerecord:
     <<: *models_and_attributes
   activemodel:

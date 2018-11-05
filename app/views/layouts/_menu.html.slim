@@ -8,4 +8,9 @@
           =< Trait.model_name.human.pluralize
           span.badge.badge-info.rounded
             | NEW
+      li.nav-item
+        = link_to components_path, class: 'nav-link' do
+          i.nav-icon.icon-puzzle
+          =< Component.model_name.human.pluralize
+          span.badge.badge-info.rounded
             | NEW
