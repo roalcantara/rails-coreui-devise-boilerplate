@@ -18,6 +18,9 @@ en:
       food_group:
         one: Food Group
         other: Food Groups
+      food:
+        one: Food
+        other: Food
     attributes:
       user:
         email: Email
@@ -58,6 +61,10 @@ en:
          Saturated: Saturated
          Unsaturated: Unsaturated
       food_group:
+        name: Name
+        description: Description
+      food:
+        food_group: Group
         name: Name
         description: Description
   activerecord:

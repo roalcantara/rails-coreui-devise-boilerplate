@@ -1,0 +1,20 @@
+.row.justify-content-md-center
+  .card.rounded.w-75
+    .card-header.rounded-top
+      i.icon-note
+      =< t("actions.#{@food.persisted? ? 'edit' : 'new'}", name: Food.model_name.human)
+
+    = simple_form_for @food do |f|
+      .card-body
+        = f.error_notification
+        = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+        .form-inputs
+          = f.association :food_group
+          = f.input :name
+          = f.input :description
+
+      .card-footer.rounded-bottom.text-right
+        =< link_to t('actions.back'), foods_path, class: 'btn btn-secondary rounded'
+        = f.button :submit, class: 'btn btn-primary rounded ml-2' do
+          i.fa.fa-pencil.fa-lg

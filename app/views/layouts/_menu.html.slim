@@ -18,3 +18,9 @@
         = link_to food_groups_path, class: 'nav-link' do
           i.nav-icon.icon-handbag
           =< FoodGroup.model_name.human.pluralize
+      li.nav-item
+        = link_to foods_path, class: 'nav-link' do
+          i.nav-icon.icon-cup
+          =< Food.model_name.human.pluralize
+          span.badge.badge-info.rounded
+            | NEW          

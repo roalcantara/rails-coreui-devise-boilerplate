@@ -1,0 +1,21 @@
+#search
+  .card.rounded
+    #headingOne.card-header.rounded-top[role="tab"]
+      a.collapsed[data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"]
+        i.icons.icon-magnifier
+        =< t('actions.filter')
+      .card-header-actions
+        a.card-header-action.btn-minimize[href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"]
+          i.icon-arrow-up
+    #collapseOne.collapse[role="tabpanel" aria-labelledby="headingOne" data-parent="#search" style=""]
+      = search_form_for @q do |f|
+        .card-body
+          .row
+            .form-group.col-sm-3
+              = f.label :name_cont
+              = f.search_field :name_cont, class: 'form-control'
+            .form-group.col-sm-3
+              = f.label :description_cont
+              = f.search_field :description_cont, class: 'form-control'
+        .card-footer.rounded-bottom.text-right
+          = f.submit t('actions.filter'), class: 'btn btn-primary rounded'

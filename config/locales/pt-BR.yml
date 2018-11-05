@@ -18,6 +18,9 @@ pt-BR:
       food_group:
         one: Grupo de Alimento
         other: Grupos de Alimento
+      food:
+        one: Alimento
+        other: Alimentos
     attributes:
       user:
         email: Email
@@ -58,6 +61,10 @@ pt-BR:
          saturated: Saturada
          unsaturated: Insaturada
       food_group:
+        name: Nome
+        description: Descrição
+      food:
+        food_group: Grupo
         name: Nome
         description: Descrição
   activerecord:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_042524) do
+ActiveRecord::Schema.define(version: 2018_11_05_045817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_05_042524) do
     t.integer "function", null: false
     t.integer "kind", null: false
     t.integer "group", null: false
-    t.integer "category", null: false
+    t.integer "category"
     t.string "name", null: false
     t.string "description"
     t.datetime "created_at", null: false
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 2018_11_05_042524) do
     t.datetime "updated_at", null: false
     t.integer "created_by_id"
     t.integer "updated_by_id"
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.bigint "food_group_id"
+    t.string "name", null: false
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "created_by_id"
+    t.integer "updated_by_id"
+    t.index ["food_group_id"], name: "index_foods_on_food_group_id"
   end
 
   create_table "traits", force: :cascade do |t|
@@ -63,4 +74,5 @@ ActiveRecord::Schema.define(version: 2018_11_05_042524) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "foods", "food_groups"
 end
