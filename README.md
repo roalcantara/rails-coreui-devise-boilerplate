@@ -1,5 +1,7 @@
 # README
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/roalcantara/rails-coreui-devise-boilerplate.svg)](https://greenkeeper.io/)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
